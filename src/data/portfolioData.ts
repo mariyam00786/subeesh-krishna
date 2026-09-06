@@ -225,6 +225,10 @@ export const PORTFOLIO_DATA = {
     { id: "bts-10", image: "/images/bts-10.jpeg", alt: "Behind the scenes 10" },
     { id: "bts-11", image: "/images/bts-11.jpeg", alt: "Behind the scenes 11" },
     { id: "bts-12", image: "/images/bts-12.jpeg", alt: "Behind the scenes 12" },
+    { id: "bts-13", image: "/images/bts-13.jpeg", alt: "Behind the scenes 13" },
+    { id: "bts-14", image: "/images/bts-14.jpeg", alt: "Behind the scenes 14" },
+    { id: "bts-15", image: "/images/bts-15.jpeg", alt: "Behind the scenes 15" },
+    { id: "bts-16", image: "/images/bts-16.jpeg", alt: "Behind the scenes 16" },
   ] as BtsItem[],
 
   about: {
