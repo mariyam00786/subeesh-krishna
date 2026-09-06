@@ -107,7 +107,7 @@ export const PORTFOLIO_DATA = {
     },
     {
       id: "assoc-3",
-      brand: "New Project",
+      brand: "DTDC",
       category: "Commercial",
       videoUrl: "/works/ASSOCIATED WORKS/IMG_1125.MP4",
       type: "associated",
