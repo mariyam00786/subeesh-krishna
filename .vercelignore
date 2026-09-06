@@ -1,0 +1,8 @@
+.next
+node_modules
+ffmpeg
+ffmpeg/
+ffmpeg.zip
+*.tmp.mp4
+compress_videos.ps1
+scripts/

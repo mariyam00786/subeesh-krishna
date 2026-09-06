@@ -44,3 +44,5 @@ next-env.d.ts
 /ffmpeg/
 ffmpeg.zip
 *.tmp.mp4
+
+.vercel
