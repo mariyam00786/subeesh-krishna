@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { PORTFOLIO_DATA, ProjectItem } from "@/data/portfolioData";
+import LazyVideo from "./LazyVideo";
 
 export default function Projects() {
   const { projects } = PORTFOLIO_DATA;
@@ -79,12 +80,8 @@ export default function Projects() {
             >
               {/* Project Media */}
               {project.videoUrl ? (
-                <video
+                <LazyVideo
                   src={project.videoUrl}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
                   className="object-cover w-full h-full transition-all duration-500 group-hover:scale-[1.02]"
                 />
               ) : project.image ? (

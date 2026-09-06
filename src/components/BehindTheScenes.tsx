@@ -31,31 +31,12 @@ export default function BehindTheScenes() {
         {/* Responsive 1:1 Square Grid (4 columns on desktop) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
           {behindTheScenes.map((item, index) => (
-            <motion.div
+            <BtsCardItem
               key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: (index % 4) * 0.07 }}
-              onClick={() => setActiveBtsModal(item)}
-              className="group relative aspect-square rounded-[10px] overflow-hidden border border-white/[0.08] bg-[#0A0A0A] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-white/[0.18] hover:brightness-[1.06]"
-              tabIndex={0}
-              role="button"
-              aria-label={item.alt}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  setActiveBtsModal(item);
-                }
-              }}
-            >
-              <Image
-                src={item.image}
-                alt={item.alt}
-                fill
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 350px"
-                className="object-cover transition-all duration-500 group-hover:scale-[1.02]"
-              />
-            </motion.div>
+              item={item}
+              index={index}
+              onSelect={() => setActiveBtsModal(item)}
+            />
           ))}
         </div>
       </div>
@@ -104,3 +85,55 @@ export default function BehindTheScenes() {
     </section>
   );
 }
+
+function BtsCardItem({
+  item,
+  index,
+  onSelect,
+}: {
+  item: BtsItem;
+  index: number;
+  onSelect: () => void;
+}) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.4, delay: (index % 4) * 0.07 }}
+      onClick={onSelect}
+      className="group relative aspect-square rounded-[10px] overflow-hidden border border-white/[0.08] bg-[#0A0A0A] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-white/[0.18] hover:brightness-[1.06]"
+      tabIndex={0}
+      role="button"
+      aria-label={item.alt}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          onSelect();
+        }
+      }}
+    >
+      {/* Dark Shimmer Skeleton Placeholder */}
+      <div
+        className={`absolute inset-0 bg-gradient-to-r from-white/[0.02] via-white/[0.06] to-white/[0.02] animate-pulse transition-opacity duration-700 pointer-events-none ${
+          isLoaded ? "opacity-0" : "opacity-100"
+        }`}
+        aria-hidden="true"
+      />
+
+      <Image
+        src={item.image}
+        alt={item.alt}
+        fill
+        loading="lazy"
+        onLoad={() => setIsLoaded(true)}
+        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 350px"
+        className={`object-cover transition-all duration-700 group-hover:scale-[1.02] ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </motion.div>
+  );
+}
+
