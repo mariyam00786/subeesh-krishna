@@ -117,15 +117,24 @@ body {
   }
 }
 
-/* Wide Cinematic Ratio for Projects */
+/* High-Fidelity Cinematic 16:9 Ratio for Projects */
 .cinematic-ratio {
   aspect-ratio: 16 / 9;
 }
 
 @media (min-width: 768px) {
   .cinematic-ratio {
-    aspect-ratio: 1920 / 800;
+    aspect-ratio: 16 / 9;
   }
+}
+
+/* Enhanced Video Rendering Quality & Hardware Acceleration */
+video {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Reference Pill Buttons */

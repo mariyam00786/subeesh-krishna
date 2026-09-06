@@ -42,7 +42,7 @@ export default function LazyVideo({
         });
       },
       {
-        rootMargin: "300px 0px 300px 0px", // Preload slightly before it scrolls into view
+        rootMargin: "500px 0px 500px 0px", // Preload smoothly before it scrolls into view
         threshold: 0.05,
       }
     );
@@ -77,7 +77,7 @@ export default function LazyVideo({
         loop
         muted
         playsInline
-        preload="none"
+        preload="metadata"
         onLoadedData={() => setIsLoaded(true)}
         className={`${className} transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"

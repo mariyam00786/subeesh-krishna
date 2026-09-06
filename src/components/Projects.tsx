@@ -131,7 +131,10 @@ export default function Projects() {
                     src={activeModalProject.videoUrl}
                     controls
                     autoPlay
-                    className="w-full h-full object-contain"
+                    playsInline
+                    preload="auto"
+                    controlsList="nodownload"
+                    className="w-full h-full object-contain focus:outline-none"
                   />
                 ) : activeModalProject.image ? (
                   <Image
