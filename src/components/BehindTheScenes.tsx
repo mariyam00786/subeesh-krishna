@@ -63,6 +63,9 @@ export default function BehindTheScenes() {
                   src={activeBtsModal.image}
                   alt={activeBtsModal.alt}
                   fill
+                  sizes="(max-width: 896px) 100vw, 896px"
+                  quality={95}
+                  priority
                   className="object-contain"
                 />
               </div>
@@ -127,8 +130,9 @@ function BtsCardItem({
         alt={item.alt}
         fill
         loading="lazy"
+        quality={90}
         onLoad={() => setIsLoaded(true)}
-        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 350px"
+        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 33vw, (max-width: 1400px) 25vw, 380px"
         className={`object-cover transition-all duration-700 group-hover:scale-[1.02] ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
