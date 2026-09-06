@@ -184,8 +184,8 @@ export const PORTFOLIO_DATA = {
     },
     {
       id: "pers-5",
-      brand: "Tamra Jal",
-      category: "Copper Water Bottle",
+      brand: "P-TAL",
+      category: "Advertisement",
       videoUrl: "/works/PERSONAL WROKS/Our idea behind launching a copper water bottle was to give people the benefits of ‘Tamra Jal’ o.mp4",
       type: "personal",
     },
@@ -205,8 +205,8 @@ export const PORTFOLIO_DATA = {
     },
     {
       id: "pers-8",
-      brand: "Hello Alo",
-      category: "Face Wash",
+      brand: "Soilscents",
+      category: "Commercial",
       videoUrl: "/works/PERSONAL WROKS/HELLO ALO!Say hello to our newest Face Wash Hello Alo that brings with it the soothing goodness .mp4",
       type: "personal",
     },
