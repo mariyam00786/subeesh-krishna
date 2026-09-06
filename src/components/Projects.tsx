@@ -44,7 +44,7 @@ export default function Projects() {
                 : "bg-transparent text-white/60 border-white/20 hover:text-white hover:border-white/50"
             }`}
           >
-            Associated Works
+            Associate DOP
           </button>
           <button
             onClick={() => setActiveFilter("personal")}
