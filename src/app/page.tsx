@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 
 const Services = dynamic(() => import("@/components/Services"), { ssr: true });
 const Projects = dynamic(() => import("@/components/Projects"), { ssr: true });
+const ShortFilm = dynamic(() => import("@/components/ShortFilm"), { ssr: true });
 const BehindTheScenes = dynamic(() => import("@/components/BehindTheScenes"), { ssr: true });
 const About = dynamic(() => import("@/components/About"), { ssr: true });
 const Contact = dynamic(() => import("@/components/Contact"), { ssr: true });
@@ -19,11 +20,14 @@ export default function Home() {
         {/* 1. Hero Section */}
         <Hero />
 
-        {/* 3. Services — "How I Can Help" */}
+        {/* 2. Services — "How I Can Help" */}
         <Services />
 
-        {/* 4. Recent Projects Grid */}
+        {/* 3. Recent Projects Grid */}
         <Projects />
+
+        {/* 4. Featured Short Film Showcase */}
+        <ShortFilm />
 
         {/* 5. Behind the Scenes Grid */}
         <BehindTheScenes />

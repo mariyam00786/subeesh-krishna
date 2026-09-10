@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Subeesh Krishna T | Cinematographer, Video Editor, Director",
     description:
-      "Cinematographer, video editor, and director with 5+ years of experience across 100+ brands.",
+      "Cinematographer, video editor, and director with 5+ years of experience across 300+ brands.",
     type: "website",
     locale: "en_US",
     images: [

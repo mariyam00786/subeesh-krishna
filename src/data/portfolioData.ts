@@ -4,6 +4,7 @@ export interface ProjectItem {
   category: string;
   image?: string;
   videoUrl?: string;
+  youtubeId?: string;
   description?: string;
   type?: "associated" | "personal";
 }
@@ -40,10 +41,10 @@ export const PORTFOLIO_DATA = {
     shortName: "SUBEESH KRISHNA",
     role: "CINEMATOGRAPHER / VIDEO EDITOR / DIRECTOR",
     experienceYears: "5",
-    brandsWorked: "100+",
+    brandsWorked: "300+",
     heroIntro: [
       "Cinematographer, video editor, and director with 5 years of experience.",
-      "Involved across 100+ brands in commercials, brand films, and social content.",
+      "Involved across 300+ brands in commercials, brand films, and social content.",
       "Comfortable moving between creative vision and technical execution on set.",
       "From shoot to final delivery, the workflow stays simple, organized, and efficient.",
     ],
@@ -52,11 +53,24 @@ export const PORTFOLIO_DATA = {
   showreel: {
     title: "WATCH SHOWREEL",
     subtitle: "Selected frames and edits in under a minute.",
-    // Replace with Subeesh's Vimeo or YouTube video ID
-    // E.g. Vimeo: '985676273' or YouTube ID
     vimeoId: "985676273",
-    // Fallback thumbnail: swap with Subeesh's custom showreel thumbnail in /public/images/
     thumbnail: "/images/showreel-thumb.jpg",
+  },
+
+  shortFilm: {
+    badge: "FEATURED SHORT FILM",
+    title: "KANI",
+    subtitle: "കണി • MALAYALAM MUSICAL SHORT FILM",
+    logline: "A lyrical narrative exploring human connection, raw emotion, and music — captured through intimate handheld framing and textured chiaroscuro lighting.",
+    youtubeId: "rQMB8u5hHNA",
+    youtubeUrl: "https://youtu.be/rQMB8u5hHNA?si=zJLW08y3WTfXD8sJ",
+    thumbnail: "/images/Thu.png",
+    credits: [
+      { label: "Cinematography", value: "Subeesh Krishna" },
+      { label: "Category", value: "Musical Short Film" },
+      { label: "Production", value: "Hopinez Stories" },
+      { label: "Featuring", value: "Sourav Subramanian • Shibin Ojai" },
+    ],
   },
 
   services: [
@@ -234,12 +248,12 @@ export const PORTFOLIO_DATA = {
   about: {
     heading: "ABOUT ME",
     paragraphs: [
-      "I'm a cinematographer, video editor, and director with 5 years of experience, having worked with 100+ brands across commercials, brand films, and social content. My work sits at the intersection of visuals, structure, and process, making sure ideas translate smoothly from set to screen.",
+      "I'm a cinematographer, video editor, and director with 5 years of experience, having worked with 300+ brands across commercials, brand films, and social content. My work sits at the intersection of visuals, structure, and process, making sure ideas translate smoothly from set to screen.",
       "Beyond technical execution, my approach is rooted in visual storytelling and intentional composition. I focus on building a collaborative environment on set, ensuring that every frame serves the emotional core of the project while maintaining a cohesive creative vision.",
       "I prefer keeping things simple, efficient, and well thought out, so the work speaks without noise.",
     ],
-    // Portrait photo placeholder (aspect ratio 4:5)
-    portraitImage: "/images/about.jpg",
+    // Portrait photo (aspect ratio 4:5)
+    portraitImage: "/images/hero.jpeg",
   },
 
   contact: {

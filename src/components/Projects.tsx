@@ -38,23 +38,21 @@ export default function Projects() {
         <div className="flex flex-wrap justify-center items-center gap-4 mb-10">
           <button
             onClick={() => setActiveFilter("associated")}
-            className={`px-6 py-2 rounded-full text-sm font-semibold tracking-wider uppercase transition-all duration-300 border ${
-              activeFilter === "associated"
+            className={`px-6 py-2 rounded-full text-sm font-semibold tracking-wider uppercase transition-all duration-300 border ${activeFilter === "associated"
                 ? "bg-white text-black border-white"
                 : "bg-transparent text-white/60 border-white/20 hover:text-white hover:border-white/50"
-            }`}
+              }`}
           >
             Associate DOP
           </button>
           <button
             onClick={() => setActiveFilter("personal")}
-            className={`px-6 py-2 rounded-full text-sm font-semibold tracking-wider uppercase transition-all duration-300 border ${
-              activeFilter === "personal"
+            className={`px-6 py-2 rounded-full text-sm font-semibold tracking-wider uppercase transition-all duration-300 border ${activeFilter === "personal"
                 ? "bg-white text-black border-white"
                 : "bg-transparent text-white/60 border-white/20 hover:text-white hover:border-white/50"
-            }`}
+              }`}
           >
-            Personal Works
+            Cinematography
           </button>
         </div>
 
@@ -85,13 +83,24 @@ export default function Projects() {
                   className="object-cover w-full h-full transition-all duration-500 group-hover:scale-[1.02]"
                 />
               ) : project.image ? (
-                <Image
-                  src={project.image}
-                  alt={`${project.brand} - ${project.category}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1400px) 50vw, 700px"
-                  className="object-cover transition-all duration-500 group-hover:scale-[1.02]"
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={project.image}
+                    alt={`${project.brand} - ${project.category}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1400px) 50vw, 700px"
+                    className="object-cover transition-all duration-500 group-hover:scale-[1.02]"
+                  />
+                  {project.youtubeId && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/25 transition-colors group-hover:bg-black/10">
+                      <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 shadow-lg">
+                        <svg className="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  )}
+                </div>
               ) : null}
 
               {/* Title & Category Overlay */}
@@ -126,7 +135,15 @@ export default function Projects() {
               className="relative max-w-5xl w-full bg-[#0A0A0A] border border-white/[0.15] rounded-[10px] overflow-hidden shadow-2xl cursor-default"
             >
               <div className="relative aspect-video w-full bg-black">
-                {activeModalProject.videoUrl ? (
+                {activeModalProject.youtubeId ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${activeModalProject.youtubeId}?autoplay=1&rel=0`}
+                    title={activeModalProject.brand}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full border-0"
+                  />
+                ) : activeModalProject.videoUrl ? (
                   <video
                     src={activeModalProject.videoUrl}
                     controls
