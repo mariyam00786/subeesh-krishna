@@ -47,22 +47,22 @@ export default function Hero() {
 
       {/* Hero content - centered on both mobile and desktop */}
       <div className="relative z-10 max-w-4xl w-full mx-auto flex flex-col items-center text-center px-4">
-        {/* Main Name Heading */}
-        <h1 className="text-[clamp(1.95rem,8vw,2.5rem)] md:text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold tracking-[0.04em] leading-[1.0] text-white uppercase mb-2.5 md:mb-3 selection:bg-white selection:text-black">
+        {/* Main Name Heading - exact opacity: 0.75 from niyasabu.com */}
+        <h1 className="text-[clamp(1.95rem,8vw,2.5rem)] md:text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold tracking-[0.04em] leading-[0.92] text-white/75 uppercase mb-2.5 md:mb-4 selection:bg-white selection:text-black">
           {personal.name}
         </h1>
 
-        {/* Role Subtitle */}
-        <p className="text-[0.68rem] md:text-[0.88rem] font-normal tracking-[0.14em] md:tracking-[0.2em] uppercase text-white/70 mb-5 md:mb-6">
+        {/* Role Subtitle - exact var(--text-secondary) = rgba(255,255,255,0.6) */}
+        <p className="text-[0.65rem] sm:text-[0.75rem] md:text-[0.95rem] font-normal tracking-[0.1em] md:tracking-[0.18em] uppercase text-white/60 mb-5 md:mb-8">
           {personal.role}
         </p>
 
-        {/* Hero Bio Paragraphs */}
-        <div className="space-y-1.5 text-white/65 max-w-[620px]">
+        {/* Hero Bio Paragraphs - exact var(--text-secondary) = rgba(255,255,255,0.6) and line-height 1.7 */}
+        <div className="space-y-1.5 md:space-y-2 text-white/60 max-w-[680px]">
           {personal.heroIntro.map((line, idx) => (
             <p
               key={idx}
-              className="text-[0.82rem] md:text-[0.93rem] font-normal leading-[1.65] md:leading-[1.7] [text-wrap:balance]"
+              className="text-[0.82rem] md:text-[0.95rem] font-normal leading-[1.7] [text-wrap:balance]"
             >
               {line}
             </p>
